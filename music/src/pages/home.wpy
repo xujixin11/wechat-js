@@ -1,0 +1,33 @@
+<style>
+.view {
+  height: 500px;
+  width: 300px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+</style>
+
+<template>
+  <view class="center">
+    <view class="view"></view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Home extends wepy.page {
+  config = {
+    navigationBarTitleText: '乐时光'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() { }
+}
+</script>
