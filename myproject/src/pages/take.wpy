@@ -1,0 +1,126 @@
+<style>
+.view {
+  width: 330px;
+  height: 230px;
+  background-color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
+.dashed {
+  border: 1px dashed white;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+}
+
+.margin {
+  margin-top: 20px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-bottom: 0.5px solid gray;
+  color: gray;
+  font-size: 30px;
+  margin-top: 15px;
+  width: 250px;
+  height: 45px;
+  padding-bottom: 5px;
+}
+
+.size {
+  width: 26px;
+  height: 26px;
+  margin-right: -45px;
+}
+
+.row {
+  display: flex;
+  margin-top: 10px;
+  height: 200px;
+  background-color: #333333;
+  padding-left: 20px;
+  padding-top: 10px;
+  opacity: 0.5;
+  color: #666666;
+}
+
+.input {
+  padding-left: 70px;
+  width: 120px;
+  height: 30px;
+}
+
+.button {
+  background-color: #696969;
+  width: 100%;
+}
+</style>
+
+<template>
+  <view>
+    <view class="center" style="height: {{height}}px">
+      <view class="view">
+        <view class="dashed">
+          <image class="image" src="{{camera}}"></image>
+          <text class="margin" style="color: #666666; font-size: 14px">你的生活就是最美的作品</text>
+        </view>
+      </view>
+      <view class="bottom">
+        <image class="size" src="{{input}}"></image>
+        <input class="input" placeholder="作品名"></input>
+      </view>
+      <view class="row" style="width: {{width}}px">
+        <textarea placeholder="点击此处填写作品描述" placeholder-style="color: #666666; font-size: 14px"></textarea>
+      </view>
+      <button class="button">上传作品</button>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Take extends wepy.page {
+  config = {
+    navigationBarTitleText: '我要参赛'
+  }
+  data = {
+    height: 0,
+    width: 0,
+    src: '',
+    camera: '../image/camera.png',
+    input: '../image/input.png'
+  }
+  methods = {
+  }
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
+}
+</script>

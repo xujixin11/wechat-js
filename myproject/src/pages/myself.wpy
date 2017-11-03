@@ -1,0 +1,167 @@
+<style>
+.back {
+  background-color: #000;
+}
+
+.size {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  flex-direction: column;
+  color: #fff;
+}
+
+.text {
+  margin-top: 10px;
+}
+
+.image {
+  width: 26px;
+  height: 26px;
+}
+
+.color {
+  background-color: #fff;
+  height: 167px;
+  margin-top: 20px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.border {
+  border-bottom: 0.5px solid gray;
+  margin: 0px 0px 0px 13px;
+  opacity: 0.3;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.arrows {
+  width: 12px;
+  height: 12px;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 200px;
+  margin-left: 30px;
+}
+
+.white {
+  background-color: #fff;
+  height: 120px;
+  margin-top: 20px;
+}
+</style>
+
+<template>
+  <view class="back" style="height:{{height}}px">
+    <view class="view">
+      <image class="size" src="{{head}}"></image>
+      <text class="text">软泥怪uzy</text>
+    </view>
+    <view class="color">
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{diamond}}"></image>
+        </view>
+        <text>我的作品</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"></image>
+        </view>
+      </view>
+      <view class="border"></view>
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{like}}"></image>
+        </view>
+        <text>我的收藏</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"></image>
+        </view>
+      </view>
+      <view class="border"></view>
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{message}}"></image>
+        </view>
+        <text>消息中心</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="white">
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{headset}}"></image>
+        </view>
+        <text>联系我们</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"></image>
+        </view>
+      </view>
+      <view class="border"></view>
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{smile}}"></image>
+        </view>
+        <text>关于我们</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Myself extends wepy.page {
+  config = {
+    navigationBarTitleText: '个人中心'
+  }
+  data = {
+    height: 0,
+    width: 0,
+    src: '',
+    head: 'http://img0.imgtn.bdimg.com/it/u=814104885,3650636077&fm=27&gp=0.jpg',
+    diamond: '../image/diamond.png',
+    like: '../image/like.png',
+    message: '../image/message.png',
+    arrows: '../image/arrows.png',
+    smile: '../image/smile.png',
+    headset: '../image/headset.png'
+  }
+  methods = {
+  }
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
+}
+</script>

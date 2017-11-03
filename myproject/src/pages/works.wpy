@@ -1,0 +1,200 @@
+<style>
+.border {
+  width: 25px;
+  height: 25px;
+}
+
+.input {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 220px;
+  margin-top: 20px;
+  padding-left: 8px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.photo {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+  height: 240px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.bottom {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.distance {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.margin {
+  display: flex;
+  margin-top: 7px;
+  margin-left: 5px;
+}
+</style>
+
+<template>
+  <view>
+    <view class="center">
+      <view class="input">
+        <input placeholder="搜索想要查看的作品">
+        </input>
+        <image class="border" src="{{search}}"></image>
+      </view>
+    </view>
+    <view class="around">
+      <text @tap="total" style="color:{{red}}">总排行</text>
+      <text @tap="popular" style="color:{{gray}}">人气作品</text>
+      <text @tap="today" style="color:{{grey}}">今日排行</text>
+    </view>
+    <view class="distance">
+      <block wx:for="{{get}}" wx:key="index">
+        <view class="column">
+          <text class="bottom">{{item.name}}</text>
+          <image class="photo" src="{{item.photo}}" mode="scaleToFill"></image>
+          <view class="row">
+            <image class="size" src="{{like}}" @tap="count"></image>
+            <text class="margin">{{number}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Works extends wepy.page {
+  config = {
+    navigationBarTitleText: '作品一览表'
+  }
+  data = {
+    src: '',
+    search: '../image/search.png',
+    like: '../image/like.png',
+    red: 'red',
+    gray: 'gray',
+    grey: 'grey',
+    get: [
+      { name: '灰暗中前行', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160705/1467683936743306_390x690.jpg' },
+      { name: '吊桥上奔走', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160624/1466732929459865_390x690.jpg' },
+      { name: '蓝色土耳其', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160525/1464146178360795_390x690.jpg' },
+      { name: '天地我唯一', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160225/1456362568730682_390x690.jpeg' },
+      { name: '一杯敬朝阳', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160812/1470963963789945_390x690.jpeg' },
+      { name: '一杯敬月光', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160818/1471483574651731_390x690.jpg' },
+      { name: '一杯敬故乡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160810/1470792195877180_390x690.jpg' },
+      { name: '一杯敬远方', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160729/1469754685123964_390x690.jpg' },
+      { name: '一杯敬明天', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160728/1469669030288254_390x690.jpg' },
+      { name: '一杯敬过往', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469582641108518_390x690.jpg' },
+      { name: '一杯敬自由', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160717/1468727507287634_390x690.jpg' },
+      { name: '一杯敬死亡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160715/1468545034466164_390x690.jpg' }
+    ],
+    number: 0,
+    content: null
+  }
+  methods = {
+    today() {
+      let self = this
+      self.red = 'grey'
+      self.gray = 'gray'
+      self.grey = 'red'
+      self.get = [
+        { name: '一杯敬朝阳', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160812/1470963963789945_390x690.jpeg' },
+        { name: '一杯敬月光', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160818/1471483574651731_390x690.jpg' },
+        { name: '一杯敬故乡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160810/1470792195877180_390x690.jpg' },
+        { name: '一杯敬远方', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160729/1469754685123964_390x690.jpg' },
+        { name: '一杯敬明天', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160728/1469669030288254_390x690.jpg' },
+        { name: '一杯敬过往', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469582641108518_390x690.jpg' },
+        { name: '一杯敬自由', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160717/1468727507287634_390x690.jpg' },
+        { name: '一杯敬死亡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160715/1468545034466164_390x690.jpg' }
+      ]
+    },
+    popular() {
+      let self = this
+      self.red = 'grey'
+      self.gray = 'red'
+      self.grey = 'gray'
+      self.get = [
+        { name: '一杯敬月光', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160818/1471483574651731_390x690.jpg' },
+        { name: '一杯敬故乡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160810/1470792195877180_390x690.jpg' },
+        { name: '一杯敬远方', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160729/1469754685123964_390x690.jpg' },
+        { name: '一杯敬明天', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160728/1469669030288254_390x690.jpg' }
+      ]
+    },
+    total() {
+      let self = this
+      self.red = 'red'
+      self.gray = 'grey'
+      self.grey = 'gray'
+      self.get = [
+        { name: '灰暗中前行', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160705/1467683936743306_390x690.jpg' },
+        { name: '吊桥上奔走', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160624/1466732929459865_390x690.jpg' },
+        { name: '蓝色土耳其', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160525/1464146178360795_390x690.jpg' },
+        { name: '天地我唯一', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160225/1456362568730682_390x690.jpeg' },
+        { name: '一杯敬朝阳', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160812/1470963963789945_390x690.jpeg' },
+        { name: '一杯敬月光', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160818/1471483574651731_390x690.jpg' },
+        { name: '一杯敬故乡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160810/1470792195877180_390x690.jpg' },
+        { name: '一杯敬远方', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160729/1469754685123964_390x690.jpg' },
+        { name: '一杯敬明天', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160728/1469669030288254_390x690.jpg' },
+        { name: '一杯敬过往', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160727/1469582641108518_390x690.jpg' },
+        { name: '一杯敬自由', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160717/1468727507287634_390x690.jpg' },
+        { name: '一杯敬死亡', photo: 'https://img.25pp.com/uploadfile/bizhi/iphone6p/20160715/1468545034466164_390x690.jpg' }
+      ]
+    },
+    count() {
+      let self = this
+      self.number++
+    }
+    // skip() {
+    //   let self = this
+    //   let item = self.content[e.currentTarget.id]
+    //   console.log(e)
+    //   wepy.navigateTo({
+    //     url: `./describe?name=${item.name}&photo=${item.photo}&number=${item.number}&describe=${item.describe}`
+    //   })
+    // }
+  }
+  onLoad() {
+    // let self = this
+    // self.content = content
+  }
+}
+</script>

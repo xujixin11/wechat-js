@@ -1,0 +1,19 @@
+
+  <view>
+    <view class="center" style="height: {{height}}px">
+      <view class="view">
+        <view class="dashed">
+          <image class="image" src="{{camera}}"/>
+          <text class="margin" style="color: #666666; font-size: 14px">你的生活就是最美的作品</text>
+        </view>
+      </view>
+      <view class="bottom">
+        <image class="size" src="{{input}}"/>
+        <input class="input" placeholder="作品名"/>
+      </view>
+      <view class="row" style="width: {{width}}px">
+        <textarea placeholder="点击此处填写作品描述" placeholder-style="color: #666666; font-size: 14px"/>
+      </view>
+      <button class="button">上传作品</button>
+    </view>
+  </view>

@@ -1,0 +1,57 @@
+
+  <view class="back">
+    <view class="view">
+      <view class="center" bindtap="total">
+        <text style="color:{{white}}">总排行</text>
+        <view class="border" style="border-bottom: 3px solid {{whiteone}}"/>
+      </view>
+      <view class="center" bindtap="popular">
+        <text style="color:{{gray}}">人气作品</text>
+        <view class="border" style="border-bottom: 3px solid {{black}}"/>
+      </view>
+      <view class="center" bindtap="today">
+        <text style="color:{{grey}}">今日排行</text>
+        <view class="border" style="border-bottom: 3px solid {{dark}}"/>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>30 收藏者</text>
+      </view>
+      <image class="image" src="{{tiger}}" bindtap="describe"/>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{head}}"/>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>40 收藏者</text>
+      </view>
+      <image class="image" src="{{tiger}}"/>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"/>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+  </view>

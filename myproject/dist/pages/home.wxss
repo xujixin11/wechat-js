@@ -1,0 +1,25 @@
+
+.sight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  width: 300px;
+  height: 480px;
+}
+
+.swiper {
+  display: flex;
+  width: 400px;
+  height: 500px;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  background-color: black;
+}

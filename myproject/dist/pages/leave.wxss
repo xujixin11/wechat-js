@@ -1,0 +1,27 @@
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px 50px 20px;
+}
+
+.textarea {
+  display: flex;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.button {
+  position: fixed;
+  bottom: 0;
+  width: 100px;
+  margin-bottom: 40px;
+  background-color: floralwhite;
+}
+
+.back {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20160701/1467335815143210_390x690.jpg')
+}

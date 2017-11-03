@@ -1,0 +1,59 @@
+
+  <view class="back" style="height:{{height}}px">
+    <view class="view">
+      <image class="size" src="{{head}}"/>
+      <text class="text">软泥怪uzy</text>
+    </view>
+    <view class="color">
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{diamond}}"/>
+        </view>
+        <text>我的作品</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"/>
+        </view>
+      </view>
+      <view class="border"/>
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{like}}"/>
+        </view>
+        <text>我的收藏</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"/>
+        </view>
+      </view>
+      <view class="border"/>
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{message}}"/>
+        </view>
+        <text>消息中心</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="white">
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{headset}}"/>
+        </view>
+        <text>联系我们</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"/>
+        </view>
+      </view>
+      <view class="border"/>
+      <view class="center">
+        <view class="left">
+          <image class="image" src="{{smile}}"/>
+        </view>
+        <text>关于我们</text>
+        <view class="right">
+          <image class="arrows" src="{{arrows}}"/>
+        </view>
+      </view>
+    </view>
+  </view>

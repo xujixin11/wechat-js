@@ -1,0 +1,13 @@
+
+  <view>
+    <view>
+      <image class="image" src="{{animal}}"/>
+      <view>
+        <text style="align-items: center; margin-left: 10px">黄昏下的影子</text>
+        <text style="color: gray; font-size: 18px; align-items: center; justify-content: flex-end;">40 收藏者</text>
+      </view>
+      <view>
+        <text style="color: gray; font-size: 18px">摄影 软泥怪uzy</text>
+      </view>
+    </view>
+  </view>

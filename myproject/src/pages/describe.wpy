@@ -1,0 +1,35 @@
+<style>
+.image {
+  width: 100%;
+}
+</style>
+<template>
+  <view>
+    <view>
+      <image class="image" src="{{animal}}"></image>
+      <view>
+        <text style="align-items: center; margin-left: 10px">黄昏下的影子</text>
+        <text style="color: gray; font-size: 18px; align-items: center; justify-content: flex-end;">40 收藏者</text>
+      </view>
+      <view>
+        <text style="color: gray; font-size: 18px">摄影 软泥怪uzy</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Describe extends wepy.page {
+  config = {
+    navigationBarTitleText: '作品描述'
+  }
+  data = {
+    src: '',
+    animal: 'http://img1.3lian.com/2015/a1/108/d/25.jpg'
+  }
+  methods = {
+  }
+  onLoad() { }
+}
+</script>

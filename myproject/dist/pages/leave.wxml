@@ -1,0 +1,12 @@
+
+  <view class="back" style="height:{{height}}px">
+    <view class="center">
+      <text>留下你的意见和建议</text>
+    </view>
+    <view class="textarea">
+      <textarea/>
+    </view>
+    <view class="center">
+      <button class="button">提交</button>
+    </view>
+  </view>

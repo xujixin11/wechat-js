@@ -1,0 +1,27 @@
+
+  <view>
+    <view class="center">
+      <view class="input">
+        <input placeholder="搜索想要查看的作品">
+        </input>
+        <image class="border" src="{{search}}"/>
+      </view>
+    </view>
+    <view class="around">
+      <text bindtap="total" style="color:{{red}}">总排行</text>
+      <text bindtap="popular" style="color:{{gray}}">人气作品</text>
+      <text bindtap="today" style="color:{{grey}}">今日排行</text>
+    </view>
+    <view class="distance">
+      <block  wx:for="{{get}}" wx:key="index">
+        <view class="column">
+          <text class="bottom">{{item.name}}</text>
+          <image class="photo" src="{{item.photo}}" mode="scaleToFill"/>
+          <view class="row">
+            <image class="size" src="{{like}}" bindtap="count"/>
+            <text class="margin">{{number}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>

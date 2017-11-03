@@ -1,0 +1,100 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/home',
+      'pages/take',
+      'pages/work',
+      'pages/myself',
+      'pages/leave',
+      'pages/describe',
+      'pages/index'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#000000',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'white'
+    },
+    tabBar: {
+      backgroundColor: '#ffffff',
+      color: '#999999',
+      selectedColor: '#000000',
+      list: [{
+        pagePath: 'pages/home',
+        text: '佳作展示',
+        iconPath: './image/icongood.png',
+        selectedIconPath: './image/goodone.png'
+      }, {
+        pagePath: 'pages/work',
+        text: '作品一览',
+        iconPath: './image/iconwork.png',
+        selectedIconPath: './image/workone.png'
+      }, {
+        pagePath: 'pages/take',
+        text: '我要参赛',
+        iconPath: './image/iconjoin.png',
+        selectedIconPath: './image/joinone.png'
+      }, {
+        pagePath: 'pages/myself',
+        text: '个人信息',
+        iconPath: './image/iconmine.png',
+        selectedIconPath: './image/mineone.png'
+      }]
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor() {
+    super()
+    this.use('requestfix')
+  }
+
+  onLaunch() {
+    this.testAsync()
+  }
+
+  sleep(s) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve('promise resolved')
+      }, s * 1000)
+    })
+  }
+
+  async testAsync() {
+    const data = await this.sleep(3)
+    console.log(data)
+  }
+
+  getUserInfo(cb) {
+    const that = this
+    if (this.globalData.userInfo) {
+      return this.globalData.userInfo
+    }
+    wepy.getUserInfo({
+      success(res) {
+        that.globalData.userInfo = res.userInfo
+        cb && cb(res.userInfo)
+      }
+    })
+  }
+}
+</script>

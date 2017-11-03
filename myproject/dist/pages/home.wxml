@@ -1,0 +1,12 @@
+
+  <view class="black" style="height:{{height}}px">
+    <view class="view">
+      <swiper class="swiper">
+        <block  wx:for="{{sight}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="sight"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>

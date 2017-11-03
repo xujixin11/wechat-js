@@ -1,0 +1,81 @@
+<style>
+.sight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  width: 300px;
+  height: 480px;
+}
+
+.swiper {
+  display: flex;
+  width: 400px;
+  height: 500px;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.black {
+  background-color: black;
+}
+</style>
+<template>
+  <view class="black" style="height:{{height}}px">
+    <view class="view">
+      <swiper class="swiper">
+        <block wx:for="{{sight}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item}}" class="sight" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Home extends wepy.page {
+  config = {
+    navigationBarTitleText: '手机摄影大赛'
+  }
+  data = {
+    src: '',
+    sight: ['../image/sight.jpg', '../image/sea.jpg', '../image/beach.jpg', '../image/boat.jpg', '../image/night.jpg'],
+    height: 0,
+    width: 0
+  }
+  methods = {
+    onShareAppMessage(res) {
+      if (res.from === 'button') {
+        // 来自页面内转发按钮
+        console.log(res.target)
+      }
+      return {
+        title: '自定义转发标题',
+        path: '/page/user?id=123',
+        success(res) {
+          // 转发成功
+        },
+        fail(res) {
+          // 转发失败
+        }
+      }
+    }
+  }
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
+}
+</script>
