@@ -2,3 +2,46 @@
 .image {
   width: 100%;
 }
+
+.view {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.text {
+  display: flex;
+  color: gray;
+  font-size: 16px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.left {
+  display: flex;
+  color: gray;
+  font-size: 16px;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 130px;
+}
+
+.blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid aqua;
+  background-color: aqua;
+  margin-top: 10px;
+  height: 26px;
+  width: 80px;
+  font-size: 15px;
+}

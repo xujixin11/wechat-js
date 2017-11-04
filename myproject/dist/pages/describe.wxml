@@ -2,12 +2,24 @@
   <view>
     <view>
       <image class="image" src="{{animal}}"/>
-      <view>
-        <text style="align-items: center; margin-left: 10px">黄昏下的影子</text>
-        <text style="color: gray; font-size: 18px; align-items: center; justify-content: flex-end;">40 收藏者</text>
+      <view class="row">
+        <view class="view">
+          <text>黄昏下的影子</text>
+        </view>
+        <view class="text">
+          <text>40 收藏者</text>
+        </view>
       </view>
-      <view>
-        <text style="color: gray; font-size: 18px">摄影 软泥怪uzy</text>
+      <view class="row">
+        <view class="left">
+          <text>摄影 软泥怪uzy</text>
+        </view>
+        <view class="blue">
+          <text>+ 收藏</text>
+        </view>
       </view>
+    </view>
+    <view>
+      <view>“拍摄感悟</view>
     </view>
   </view>

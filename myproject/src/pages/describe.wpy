@@ -2,18 +2,73 @@
 .image {
   width: 100%;
 }
+
+.view {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+  align-items: center;
+  margin-right: 150px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.text {
+  display: flex;
+  color: gray;
+  font-size: 16px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.left {
+  display: flex;
+  color: gray;
+  font-size: 16px;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 130px;
+}
+
+.blue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid aqua;
+  background-color: aqua;
+  margin-top: 10px;
+  height: 26px;
+  width: 80px;
+  font-size: 15px;
+}
 </style>
 <template>
   <view>
     <view>
       <image class="image" src="{{animal}}"></image>
-      <view>
-        <text style="align-items: center; margin-left: 10px">黄昏下的影子</text>
-        <text style="color: gray; font-size: 18px; align-items: center; justify-content: flex-end;">40 收藏者</text>
+      <view class="row">
+        <view class="view">
+          <text>黄昏下的影子</text>
+        </view>
+        <view class="text">
+          <text>40 收藏者</text>
+        </view>
       </view>
-      <view>
-        <text style="color: gray; font-size: 18px">摄影 软泥怪uzy</text>
+      <view class="row">
+        <view class="left">
+          <text>摄影 软泥怪uzy</text>
+        </view>
+        <view class="blue">
+          <text>+ 收藏</text>
+        </view>
       </view>
+    </view>
+    <view>
+      <view>“拍摄感悟</view>
     </view>
   </view>
 </template>
