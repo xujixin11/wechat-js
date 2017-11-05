@@ -42,7 +42,7 @@
         </view>
         <text>联系我们</text>
         <view class="right">
-          <image class="arrows" src="{{arrows}}"/>
+          <image class="arrows" src="{{arrows}}" bindtap="phonecall"/>
         </view>
       </view>
       <view class="border"/>

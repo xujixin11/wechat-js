@@ -117,7 +117,7 @@
         </view>
         <text>联系我们</text>
         <view class="right">
-          <image class="arrows" src="{{arrows}}"></image>
+          <image class="arrows" src="{{arrows}}" @tap="phonecall"></image>
         </view>
       </view>
       <view class="border"></view>
@@ -153,6 +153,16 @@ export default class Myself extends wepy.page {
     headset: '../image/headset.png'
   }
   methods = {
+    contact() {
+      wepy.navigateTo({
+        url: './contact'
+      })
+    },
+    phonecall() {
+      wepy.makePhoneCall({
+        phoneNumber: '15100323326'
+      })
+    }
   }
   onLoad() {
     let self = this

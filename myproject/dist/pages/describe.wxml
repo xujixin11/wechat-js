@@ -1,6 +1,6 @@
 
-  <view>
-    <view>
+  <view style="height: {{height}}px; background-color: whitesmoke">
+    <view style="background-color: white; height: 310px;">
       <image class="image" src="{{animal}}"/>
       <view class="row">
         <view class="view">
@@ -19,7 +19,9 @@
         </view>
       </view>
     </view>
-    <view>
-      <view>“拍摄感悟</view>
+    <view style="background-color: white">
+      <view class="center">“拍摄感悟</view>
+      <text class="padding">设计心理学是设计专业一门理论课，是设计师必须掌握的学科。设计心理学是建立在心理学基础上，把人们心理状态，尤其是人们对于需求的心理通过意识作用于设计的一门学问。
+        它同时研究人们在设计创造过程中的心态。以及设计对社会及社会个体所产生的心理反应，反过来在作用于设计，使设计更能够反映和满足人们的心理作用。</text>
     </view>
   </view>

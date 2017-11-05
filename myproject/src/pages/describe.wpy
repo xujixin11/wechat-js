@@ -5,7 +5,7 @@
 
 .view {
   display: flex;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 10px;
   align-items: center;
   margin-right: 150px;
@@ -21,7 +21,7 @@
   color: gray;
   font-size: 16px;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .left {
@@ -29,7 +29,7 @@
   color: gray;
   font-size: 16px;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 10px;
   margin-right: 130px;
 }
@@ -40,15 +40,32 @@
   align-items: center;
   border: 1px solid aqua;
   background-color: aqua;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 26px;
   width: 80px;
   font-size: 15px;
 }
+
+.center {
+  display: flex;
+  font-size: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  color: gray;
+}
+
+.padding {
+  display: flex;
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+}
 </style>
 <template>
-  <view>
-    <view>
+  <view style="height: {{height}}px; background-color: whitesmoke">
+    <view style="background-color: white; height: 310px;">
       <image class="image" src="{{animal}}"></image>
       <view class="row">
         <view class="view">
@@ -67,8 +84,10 @@
         </view>
       </view>
     </view>
-    <view>
-      <view>“拍摄感悟</view>
+    <view style="background-color: white">
+      <view class="center">“拍摄感悟</view>
+      <text class="padding">设计心理学是设计专业一门理论课，是设计师必须掌握的学科。设计心理学是建立在心理学基础上，把人们心理状态，尤其是人们对于需求的心理通过意识作用于设计的一门学问。
+        它同时研究人们在设计创造过程中的心态。以及设计对社会及社会个体所产生的心理反应，反过来在作用于设计，使设计更能够反映和满足人们的心理作用。</text>
     </view>
   </view>
 </template>
@@ -81,10 +100,18 @@ export default class Describe extends wepy.page {
   }
   data = {
     src: '',
-    animal: 'http://img1.3lian.com/2015/a1/108/d/25.jpg'
+    animal: 'http://img1.3lian.com/2015/a1/108/d/25.jpg',
+    height: 0
   }
   methods = {
   }
-  onLoad() { }
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+      }
+    })
+  }
 }
 </script>

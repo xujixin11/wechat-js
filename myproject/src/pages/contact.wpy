@@ -1,0 +1,30 @@
+<style>
+.column {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+<template>
+  <view>
+    <view class="column">
+      <text>QQ: 1399706488</text>
+      <text>微信: xin12151688</text>
+      <text>联系电话: 18331290137</text>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Contact extends wepy.page {
+  config = {
+    navigationBarTitleText: '联系我们'
+  }
+  data = {
+  }
+  methods = {
+  }
+  onLoad() {
+  }
+}
+</script>
