@@ -82,7 +82,7 @@
     <view class="center" style="height: {{height}}px">
       <view class="view">
         <view class="dashed">
-          <image class="image" src="{{camera}}"></image>
+          <image class="image" src="{{camera}}" @tap="choose"></image>
           <text class="margin" style="color: #666666; font-size: 14px">你的生活就是最美的作品</text>
         </view>
       </view>
@@ -112,6 +112,17 @@ export default class Take extends wepy.page {
     input: '../image/input.png'
   }
   methods = {
+    choose() {
+      let self = this
+      wepy.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success: function (res) {
+          self.tempFilePaths = res.tempFilePaths
+        }
+      })
+    }
   }
   onLoad() {
     let self = this

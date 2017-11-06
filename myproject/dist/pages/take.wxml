@@ -3,7 +3,7 @@
     <view class="center" style="height: {{height}}px">
       <view class="view">
         <view class="dashed">
-          <image class="image" src="{{camera}}"/>
+          <image class="image" src="{{camera}}" bindtap="choose"/>
           <text class="margin" style="color: #666666; font-size: 14px">你的生活就是最美的作品</text>
         </view>
       </view>
