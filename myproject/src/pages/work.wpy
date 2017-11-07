@@ -44,7 +44,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -50px;
+  margin-top: -60px;
   color: gray;
   font-size: 14px;
 }
@@ -136,7 +136,67 @@
       <view class="position">
         <text>40 收藏者</text>
       </view>
-      <image class="image" src="{{tiger}}"></image>
+      <image class="image" src="{{deer}}"></image>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"></image>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>50 收藏者</text>
+      </view>
+      <image class="image" src="{{rabbit}}"></image>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"></image>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>60 收藏者</text>
+      </view>
+      <image class="image" src="{{zebra}}"></image>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"></image>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>70 收藏者</text>
+      </view>
+      <image class="image" src="{{crow}}"></image>
       <view class="white">
         <text>Look,deer</text>
       </view>
@@ -166,6 +226,10 @@ export default class Work extends wepy.page {
     head: 'http://img0.imgtn.bdimg.com/it/u=814104885,3650636077&fm=27&gp=0.jpg',
     tiger: 'http://img1.3lian.com/2015/a1/108/d/25.jpg',
     photo: 'http://img4.imgtn.bdimg.com/it/u=2770691011,100164542&fm=214&gp=0.jpg',
+    deer: 'http://img1.3lian.com/2015/a1/108/d/18.jpg',
+    rabbit: 'http://img1.3lian.com/2015/a1/108/d/20.jpg',
+    zebra: 'http://a0.att.hudong.com/63/17/300000868465128471179866541_950.jpg',
+    crow: 'http://image1.nphoto.net/news/image/201111/a47599c7d6729661.jpg',
     white: 'white',
     gray: 'gray',
     grey: 'grey',
@@ -191,7 +255,6 @@ export default class Work extends wepy.page {
       self.whiteone = 'black'
       self.black = 'white'
       self.dark = 'black'
-      self.animal = 'tiger'
     },
     today() {
       let self = this

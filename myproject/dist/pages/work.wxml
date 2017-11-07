@@ -38,7 +38,67 @@
       <view class="position">
         <text>40 收藏者</text>
       </view>
-      <image class="image" src="{{tiger}}"/>
+      <image class="image" src="{{deer}}"/>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"/>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>50 收藏者</text>
+      </view>
+      <image class="image" src="{{rabbit}}"/>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"/>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>60 收藏者</text>
+      </view>
+      <image class="image" src="{{zebra}}"/>
+      <view class="white">
+        <text>Look,deer</text>
+      </view>
+      <view class="right">
+        <image class="head" src="{{photo}}"/>
+      </view>
+      <view class="gray">
+        <text>#软泥怪uzy</text>
+      </view>
+      <view class="text">
+        <view class="solid">
+          <text>+收藏</text>
+        </view>
+      </view>
+    </view>
+    <view class="height">
+      <view class="position">
+        <text>70 收藏者</text>
+      </view>
+      <image class="image" src="{{crow}}"/>
       <view class="white">
         <text>Look,deer</text>
       </view>
